@@ -1,0 +1,124 @@
+{
+    "Path_Data_Augmentation": "projects/janken_dataset",
+    "Path_DataSet":[        
+        {"path_torchtext_training": "projects/torchtext_preprocess",
+        "path_torchtext_validation": "projects/torchtext_preprocess",
+        "path_torchtext_testing": "projects/torchtext_preprocess"
+        },
+        {"path_data_training": "projects/FasionMNIST/training",
+        "path_data_validation": "projects/FasionMNIST/validation",
+        "path_data_testing": "projects/FasionMNIST/testing"
+        },
+        {"path_seq2seq_training": "projects/seq2seq",
+        "path_seq2seq_validation": "projects/seq2seq",
+        "path_seq2seq_testing": "projects/seq2seq"
+        },
+        {
+         "path_CIFAR10": "projects"   
+        }
+    ],
+
+    "Config":[
+        {
+         "hidden_size": 256,
+         "num_layers": 1,
+         "sequence_length": 28,
+         
+         "checkpoint_path": "./19_4_seq2seq_attenation.ckpt",
+         "input_size": 28,
+         "num_classes": 20,
+         "batch_size": 32,
+         
+         "embedding_size": 512,
+         "num_heads":  8,
+         "num_encoder_layers": 3,
+         "num_decoder_layers": 3,
+
+         "num_epochs": 150,
+         "dropout": 0.10,
+         "patience": 5,
+         "learning_rate": 3e-4, 
+         "weight_decay": 1e-5   
+        },
+        {
+         "batch_size": 32,
+         "num_epochs": 10,
+         "learning_rate": 0.001, 
+         "momentum": 0.9,
+         "description": "ML_Pytorch_21-1-2_image_classification"         
+        },
+        {
+         "rootpath_trainval": "2012_trainval/VOCdevkit/VOC2012",
+         "rootpath_test": "2012_test/VOCdevkit/VOC2012",
+         "batch_size": 32,
+         "num_epochs": 10,
+         "learning_rate": 1e-3, 
+         "momentum": 0.9,
+         "weights": "/weights/vgg16_reducedfc.pth",
+         
+         "weight_decay": 5e-4,   
+         "description": "ML_Pytorch_22-1-2_object_dectection"         
+        },
+        {
+         "path_trainval": "2012_trainval/VOCdevkit/VOC2012",
+         "batch_size": 8,
+         "iterations": 2400,
+         "workers": 4,
+         "lr": 1e-3,
+         "decay_lr_at": [80000, 100000],
+         "decay_lr_to": 0.1,
+         "momentum": 0.9,
+         "weight_decay": 5e-4,
+         "print_freq": 200
+        },
+        {
+        "weights": "weights/checkpoint_ssd300.pth.tar",
+         
+        "description": "ML_Pytorch_22-5-3_SSD_inference"            
+        },
+        {
+            "seed": 11,
+            "model_path": "weights/ssd_weights.pth",
+            "backbone": "vgg",
+            "init_epoch": 0,
+            "freeze_epoch": 20,
+            "freeze_batch_size": 16,
+            "unfreeze_epoch": 50,
+            "unfreeze_batch_size": 8,
+            "init_lr": 2e-3,
+            "optimizer_type": "sgd",
+            "momentum": 0.937,
+            "weight_decay": 5e-4,
+            "lr_decay_type": "cos",
+            "save_period": 10,
+            "eval_period": 10,
+            "num_workers": 4,
+            "train_annotation_path": "2007_train.txt",
+            "val_annotation_path": "2007_val.txt", 
+            
+            "description": ["ML_Pytorch_22-4_SSD_training",
+                            "ML_Pytorch_23-4_SSD_training",
+                            "ML_Pytorch_24-4_SSD_training"]             
+        },
+        {
+            "anno_mode": 0,
+            "trainval_percent":  0.9,
+            "train_percent": 0.9,
+            
+            "description": "ML_Pytorch_23-4_SSD_voc_annotation"                        
+        },
+        {
+            
+            "description": "ML_Pytorch_25-1_dataloader"                        
+        },
+        {
+            "num_epochs": 10,
+            "momentum": 0.9,
+            "weight_decay": 0.0001,
+            
+            "description": "ML_Pytorch_25-3_PSPNet_training"                        
+        }    
+
+    ]
+
+}
