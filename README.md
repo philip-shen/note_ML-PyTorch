@@ -1,6 +1,5 @@
 Table of Contents
 =================
-
    * [01 Instructions for CUDA v11.3 and cuDNN 8.2 installation on Ubuntu 20.04 for PyTorch 1.11](#01-instructions-for-cuda-v113-and-cudnn-82-installation-on-ubuntu-2004-for-pytorch-111)
       * [RTX 3090 requires driver version of 515 (not 470).](#rtx-3090-requires-driver-version-of-515-not-470)
       * [CUDA v11.8 and cuDNN 8.2 installation on Ubuntu 20.04 for PyTorch](#cuda-v118-and-cudnn-82-installation-on-ubuntu-2004-for-pytorch)
@@ -518,6 +517,9 @@ INFO: timer:  741.9591 sec.
 INFO: Time Consumption: 1h30m53s.
 ```
 
+[pspnet_mobilenetv2.pth](https://github.com/bubbliiiing/pspnet-pytorch/releases/download/v1.0/pspnet_mobilenetv2.pth)  
+[pspnet_resnet50.pth](https://github.com/bubbliiiing/pspnet-pytorch/releases/download/v1.0/pspnet_resnet50.pth)  
+
 ### Reference 
 [FCN_VOC2012_Pytorch/fcn.py](https://github.com/nwpuhkp/FCN_VOC2012_Pytorch/blob/master/fcn.py)
 
@@ -579,10 +581,3 @@ INFO: Time Consumption: 1h30m53s.
 - 1
 - 2
 - 3
-
-Table of Contents
-=================
-
-
-
-<!-- Created by https://github.com/ekalinin/github-markdown-toc -->

@@ -7,7 +7,7 @@ import torch
 import torch.nn.functional as F
 from torch import nn
 
-from .mobilenetv2 import mobilenetv2
+from .mobilenetv2_bubbliiiing import mobilenetv2
 from .resnet import resnet50
 
 

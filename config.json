@@ -117,7 +117,40 @@
             "weight_decay": 0.0001,
             
             "description": "ML_Pytorch_25-3_PSPNet_training"                        
-        }    
+        },
+        {
+            "seed": 11,
+            "num_classes": 21,
+            "backbone": "mobilenet",            
+            "model_path": "weights/pspnet_mobilenetv2.pth",
+            "downsample_factor": 16, 
+            "input_shape": [473, 473],
+            "init_epoch": 0,
+            "freeze_epoch": 50,
+            "freeze_batch_size": 8,
+            "unfreeze_epoch": 100,
+            "unfreeze_batch_size": 4,
+            "init_lr": 1e-2,
+            "optimizer_type": "sgd",
+            "momentum": 0.937,
+            "weight_decay": 1e-4,
+            "lr_decay_type": "cos",
+            "save_period": 10,
+            "eval_period": 10,
+            "num_workers": 4,
+            
+            "description": "ML_Pytorch_26-2_train"
+        },
+        {
+            "mode": "predict",
+            "video_path":  0,
+            "video_save_path": "",
+            "video_fps": 25.0,
+            "test_interval": 100,
+            "fps_image_path": "img/street.jpg",
+
+            "description": "ML_Pytorch_26-3_predict"
+        }       
 
     ]
 
