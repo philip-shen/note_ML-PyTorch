@@ -1,4 +1,4 @@
-Table of Contents
+# Table of Contents
 =================
    * [01 Instructions for CUDA v11.3 and cuDNN 8.2 installation on Ubuntu 20.04 for PyTorch 1.11](#01-instructions-for-cuda-v113-and-cudnn-82-installation-on-ubuntu-2004-for-pytorch-111)
       * [RTX 3090 requires driver version of 515 (not 470).](#rtx-3090-requires-driver-version-of-515-not-470)
@@ -42,7 +42,10 @@ Table of Contents
          * [Reference](#reference-2)
       * [4_pose_estimation](#4_pose_estimation)
        * [Reference](#reference-3)   
-   * [Reference](#reference-4)
+   * [nvidia-smi Error Msg: Failed to initialize NVML: Driver/library version mismatch](#nvidia-smi-error-msg-failed-to-initialize-nvml-driverlibrary-version-mismatch)
+      * [Solution](#solution)
+      * [Reference](#reference-4)    
+   * [Reference](#reference-5)
    * [h1 size](#h1-size)
       * [h2 size](#h2-size)
          * [h3 size](#h3-size)
@@ -52,7 +55,7 @@ Table of Contents
 Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
 
 
-# 01 Instructions for CUDA v11.3 and cuDNN 8.2 installation on Ubuntu 20.04 for PyTorch 1.11  
+# Instructions for CUDA v11.3 and cuDNN 8.2 installation on Ubuntu 20.04 for PyTorch 1.11  
 [Mahedi-61/cuda_11.3_installation_on_Ubuntu_20.04](https://gist.github.com/Mahedi-61/2a2f1579d4271717d421065168ce6a73?permalink_comment_id=3990379)
 
 ```
@@ -152,21 +155,21 @@ $ nvidia-smi
 +-------------------------------+----------------------+----------------------+
 ```
 
-### 1. Make a virtual environment  
+### Make a virtual environment  
 ```
 mkdir ~/virtualenv
 
 python3 -m venv ~/virtualenv/cuda118_pytorch
 ```
 
-### 2. Activate the virtual envPermalink  
+### Activate the virtual envPermalink  
 ```
 source ~/virtualenv/cuda118_pytorch//bin/activate
 
 pip3 install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu118
 ```
 
-### 3. Check Pytorch Use CUDA and Test the Installation   
+### Check Pytorch Use CUDA and Test the Installation   
 
 ```
 import os
@@ -190,7 +193,7 @@ python3 -m venv my_env
 
 
 
-# 02 Docker_GPU-RTX3090_Pytorch  
+# Docker_GPU-RTX3090_Pytorch  
 [Ubuntu 22.04 Docker GPU RTX3090 Pytorch環境 構築メモ updated at 2022-11-23](https://qiita.com/Hachimaki/items/5e7b1245bb15cef5bf9a)
 
 
@@ -346,6 +349,7 @@ $ docker compose up -d
 ```
 
 ## Docker stuff
+
 ### Docker コンテナの起動
 ```
 $ docker start ubuntu_gpu-base
@@ -371,16 +375,18 @@ nvidia-smi
 ```
 
 
-# 03 PyTorch Deep Learning    
+# PyTorch Deep Learning    
 [PyTorchでBERTなど各種DLモデルを作りながら学ぶ書籍を執筆しました Last updated at 2019-07-18](https://qiita.com/sugulu_Ogawa_ISID/items/07253d12b1fc72e16aba)  
 [YutaroOgawa/pytorch_advanced](https://github.com/YutaroOgawa/pytorch_advanced/tree/master)  
 
-## 1_image_classification   
+## _image_classification   
+
 ### VGG 
 <img src="https://miro.medium.com/v2/resize:fit:4800/format:webp/1*kIRpPdN-11Kk8W5iU1NDXw.png" width="1200" height="700">  
 [hymenoptera_data.zip]("https://download.pytorch.org/tutorial/hymenoptera_data.zip")  
 
 [ML_Pytorch_21-1_image_classification.py](ML_Pytorch_21-1_image_classification.py)  
+
 ### weights = none
 <img src="images/21_1-ErrAcc_Rate_weights_none.jpg" width="1000" height="300">
 
@@ -394,7 +400,7 @@ nvidia-smi
 ### Reference 
 [PyTorchを用いたディープラーニング実装の学習方法 (Part 1) Aug 26, 2020](https://medium.com/pytorch/pytorch%E3%82%92%E7%94%A8%E3%81%84%E3%81%9F%E3%83%87%E3%82%A3%E3%83%BC%E3%83%97%E3%83%A9%E3%83%BC%E3%83%8B%E3%83%B3%E3%82%B0%E5%AE%9F%E8%A3%85%E3%81%AE%E5%AD%A6%E7%BF%92%E6%96%B9%E6%B3%95-part-1-e5f6ad77e0ff)  
 
-## 2_objectdetection   
+## _objectdetection   
 [VOC2012](http://host.robots.ox.ac.uk/pascal/VOC/voc2012/VOCtrainval_11-May-2012.tar)  
 
 ### Single Shot Multibox Detector (SSD)
@@ -451,7 +457,7 @@ Weights: [ssd_weights.pth](https://github.com/bubbliiiing/ssd-pytorch/releases/d
 [songdejia/SSD](https://github.com/songdejia/SSD)  
 [misads/easy_detection](https://github.com/misads/easy_detection)  
 
-## 3_semantic_segmentation  
+## _semantic_segmentation  
 
 [ML_Pytorch_25-1_dataloader.py](ML_Pytorch_25-1_dataloader.py)  
 [ML_Pytorch_25-2_network_model.py](ML_Pytorch_25-2_network_model.py)  
@@ -530,7 +536,7 @@ INFO: Time Consumption: 1h30m53s.
 
 [第3章 セマンティックセグメンテーション PSPNet](https://nw.tsuda.ac.jp/lec/DeepLearning/book11/ch03/book11_ch03.html) 
 
-## 4_pose_estimation  
+## _pose_estimation  
 
 ### Reference 
 [第4章 姿勢推定 (OpenPose)](https://nw.tsuda.ac.jp/lec/DeepLearning/book11/ch04/book11_ch04.html)  
@@ -542,10 +548,136 @@ INFO: Time Consumption: 1h30m53s.
 ## 7_nlp_sentiment_transformer  
 [PyTorchを用いたディープラーニング実装の学習方法 (Part 3) Aug 26, 2020](https://medium.com/pytorch/pytorch%E3%82%92%E7%94%A8%E3%81%84%E3%81%9F%E3%83%87%E3%82%A3%E3%83%BC%E3%83%97%E3%83%A9%E3%83%BC%E3%83%8B%E3%83%B3%E3%82%B0%E5%AE%9F%E8%A3%85%E3%81%AE%E5%AD%A6%E7%BF%92%E6%96%B9%E6%B3%95-part-3-144f62b7d58c)  
 
-## 8_nlp_sentiment_bert  
-## 9_video_classification_eco   
 ```
 
+# nvidia-smi Error Msg: Failed to initialize NVML: Driver/library version mismatch  
+
+```
+$ nvidia-smi
+Failed to initialize NVML: Driver/library version mismatch
+NVML library version: 535.104
+```
+
+```
+$ cat /proc/driver/nvidia/version 
+
+NVRM version: NVIDIA UNIX x86_64 Kernel Module  520.61.05  Thu Sep 29 05:30:25 UTC 2022
+GCC version:  gcc version 9.4.0 (Ubuntu 9.4.0-1ubuntu1~20.04.2) 
+```
+
+*Driver version in Kernel is different in installation*
+
+## Solution  
+```
+$ sudo apt purge nvidia* libnvidia*
+
+$ sudo apt install nvidia-driver-520
+```
+```
+KMS: install completed.
+Setting up libnvidia-decode-520:amd64 (520.61.05-0ubuntu1) ...
+Setting up libnvidia-decode-520:i386 (520.61.05-0ubuntu1) ...
+Setting up xserver-xorg-video-nvidia-520 (520.61.05-0ubuntu1) ...
+Setting up libnvidia-encode-520:amd64 (520.61.05-0ubuntu1) ...
+Setting up libnvidia-encode-520:i386 (520.61.05-0ubuntu1) ...
+Setting up nvidia-driver-520 (520.61.05-0ubuntu1) ...
+Processing triggers for mime-support (3.64ubuntu1) ...
+Processing triggers for gnome-menus (3.36.0-1ubuntu1) ...
+Processing triggers for libc-bin (2.31-0ubuntu9.9) ...
+Processing triggers for man-db (2.9.1-1) ...
+Processing triggers for dbus (1.12.16-2ubuntu2.3) ...
+Processing triggers for desktop-file-utils (0.24-1ubuntu3) ...
+Processing triggers for initramfs-tools (0.136ubuntu6.7) ...
+update-initramfs: Generating /boot/initrd.img-5.15.0-84-generic
+I: The initramfs will attempt to resume from /dev/nvme1n1p4
+I: (UUID=8a1ffa45-6506-493d-bd9f-5611dbbecb27)
+I: Set the RESUME variable to override this.
+```
+
+```
+$ dkms status
+nvidia, 520.61.05, 5.15.0-84-generic, x86_64: installed
+```
+
+```
+$ nvidia-smi
+
+Fri Sep 29 14:40:12 2023       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 520.61.05    Driver Version: 520.61.05    CUDA Version: 11.8     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  NVIDIA GeForce ...  Off  | 00000000:01:00.0 Off |                  N/A |
+| 53%   50C    P0    50W / 170W |     10MiB / 12288MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|    0   N/A  N/A      1398      G   /usr/lib/xorg/Xorg                  4MiB |
+|    0   N/A  N/A      2161      G   /usr/lib/xorg/Xorg                  4MiB |
++-----------------------------------------------------------------------------+
+```
+
+```
+$ dpkg -l | grep nvidia
+ii  libnvidia-cfg1-520:amd64                   520.61.05-0ubuntu1                  amd64        NVIDIA binary OpenGL/GLX configuration library
+ii  libnvidia-common-520                       520.61.05-0ubuntu1                  all          Shared files used by the NVIDIA libraries
+ii  libnvidia-compute-520:amd64                520.61.05-0ubuntu1                  amd64        NVIDIA libcompute package
+ii  libnvidia-compute-520:i386                 520.61.05-0ubuntu1                  i386         NVIDIA libcompute package
+ii  libnvidia-decode-520:amd64                 520.61.05-0ubuntu1                  amd64        NVIDIA Video Decoding runtime libraries
+ii  libnvidia-decode-520:i386                  520.61.05-0ubuntu1                  i386         NVIDIA Video Decoding runtime libraries
+ii  libnvidia-encode-520:amd64                 520.61.05-0ubuntu1                  amd64        NVENC Video Encoding runtime library
+ii  libnvidia-encode-520:i386                  520.61.05-0ubuntu1                  i386         NVENC Video Encoding runtime library
+ii  libnvidia-extra-520:amd64                  520.61.05-0ubuntu1                  amd64        Extra libraries for the NVIDIA driver
+ii  libnvidia-fbc1-520:amd64                   520.61.05-0ubuntu1                  amd64        NVIDIA OpenGL-based Framebuffer Capture runtime library
+ii  libnvidia-fbc1-520:i386                    520.61.05-0ubuntu1                  i386         NVIDIA OpenGL-based Framebuffer Capture runtime library
+ii  libnvidia-gl-520:amd64                     520.61.05-0ubuntu1                  amd64        NVIDIA OpenGL/GLX/EGL/GLES GLVND libraries and Vulkan ICD
+ii  libnvidia-gl-520:i386                      520.61.05-0ubuntu1                  i386         NVIDIA OpenGL/GLX/EGL/GLES GLVND libraries and Vulkan ICD
+ii  nvidia-compute-utils-520                   520.61.05-0ubuntu1                  amd64        NVIDIA compute utilities
+ii  nvidia-dkms-520                            520.61.05-0ubuntu1                  amd64        NVIDIA DKMS package
+ii  nvidia-driver-520                          520.61.05-0ubuntu1                  amd64        NVIDIA driver metapackage
+ii  nvidia-kernel-common-520                   520.61.05-0ubuntu1                  amd64        Shared files used with the kernel module
+ii  nvidia-kernel-source-520                   520.61.05-0ubuntu1                  amd64        NVIDIA kernel source package
+ii  nvidia-prime                               0.8.16~0.20.04.2                    all          Tools to enable NVIDIA's Prime
+ii  nvidia-settings                            535.104.12-0ubuntu1                 amd64        Tool for configuring the NVIDIA graphics driver
+ii  nvidia-utils-520                           520.61.05-0ubuntu1                  amd64        NVIDIA driver support binaries
+ii  screen-resolution-extra                    0.18build1                          all          Extension for the nvidia-settings control panel
+ii  xserver-xorg-video-nvidia-520              520.61.05-0ubuntu1                  amd64        NVIDIA binary Xorg driver
+```
+
+```
+$ dpkg -l | grep cudn
+ii  cudnn-local-repo-ubuntu2004-8.8.0.121      1.0-1                               amd64        cudnn-local repository configuration files
+ii  cudnn-local-repo-ubuntu2004-8.9.3.28       1.0-1                               amd64        cudnn-local repository configuration files
+```
+
+```
+$ nvcc -V
+
+Command 'nvcc' not found, but can be installed with:
+
+sudo apt install nvidia-cuda-toolkit
+```
+```
+$ sudo apt install nvidia-cuda-toolkit 
+
+$ nvcc -V
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2019 NVIDIA Corporation
+Built on Sun_Jul_28_19:07:16_PDT_2019
+Cuda compilation tools, release 10.1, V10.1.243
+```
+
+## Reference  
+[Failed to initialize NVML: Driver/library version mismatch Sep 29, 2021](https://forums.developer.nvidia.com/t/failed-to-initialize-nvml-driver-library-version-mismatch/190421)  
+["Failed to initialize NVML: Driver/library version mismatch" - is Ubuntu server auto-updating? answered Nov 16, 2021](https://stackoverflow.com/questions/65721900/failed-to-initialize-nvml-driver-library-version-mismatch-is-ubuntu-server)  
 
 
 # Reference  
@@ -555,15 +687,15 @@ INFO: Time Consumption: 1h30m53s.
 ![alt tag]()
 <img src="" width="400" height="500">
 
-# h1 size
+# h1 sizee
 
-## h2 size
+## h2 sizee
 
-### h3 size
+### h3 sizee
 
-#### h4 size
+#### h4 sizee
 
-##### h5 size
+##### h5 sizee
 
 *strong*strong  
 **strong**strong  
